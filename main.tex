@@ -1,14 +1,480 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+%\paperwidth 11in
+\usepackage{longtable}
+\usepackage{amsmath}
+\usepackage{graphics}
+\usepackage{epsfig}
+\usepackage{epstopdf}
+\usepackage{pdflscape}
+\usepackage{graphicx}
 
-\title{Automation}
-\author{tsangares }
+\usepackage{lipsum}
+\usepackage{amsthm}
+\usepackage{flafter}
+\usepackage{float}
+\usepackage{multirow}
+\usepackage{afterpage}
+\usepackage{fullpage}
+\usepackage{chngcntr}
+\usepackage[parfill]{parskip}
+% \usepackage{apacite}
+\usepackage{tikz}
+\usepackage{soul}
+\usetikzlibrary{shapes,arrows}
+\usepackage{booktabs}
+
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks   = true, %Colours links instead of ugly boxes
+  linkcolor    = blue, %Colour of internal links
+  citecolor     = blue,
+}
+\newcommand{\blockcomment}[1]{}
+\usepackage{soul}
+\usepackage{verbatim}
+\usepackage{appendix}
+\usepackage{lscape}
+\usepackage{booktabs}
+\usepackage{soul}
+\usepackage{tabularx}
+\usepackage{mathtools}
+\usepackage{booktabs}
+\usetikzlibrary{shapes,arrows}
+\usepackage{threeparttable}
+\usepackage[hang, bf]{caption}
+\usepackage{setspace}
+\usepackage{rotating}
+\usepackage{xcolor}
+\onehalfspacing
+\usepackage{graphicx} % Required for including images
+\graphicspath{{figures/}} 
+% \usepackage{natbib}
+% \newcommand{\mybibstyle}{dcu}
+% \newcommand{\Cite}{\citet} 
+% \bibpunct{(}{)}{;}{a}{}{;} 
+\usepackage[font=small,labelfont=bf]{caption} % Required for specifying captions to tables and figures
+
+\usepackage{fancyhdr}
+\newcommand*\conj[1]{\bar{#1}}
+\newcommand*\mean[1]{\bar{#1}}
+
+\title{Replecation of ROBOTS AND JOBS: EVIDENCE FROM US LABOR MARKETS}
+\author{William Wyatt }
 \date{June 2022}
 
 \begin{document}
 
 \maketitle
+\newpage
+\section{Figures}
+\begin{center}\includegraphics[scale=0.15]{output/figure_first_stage.png}\end{center}
+\begin{center}\includegraphics[scale=0.15]{output/figure_heterogeneity_appendix_industry.png}\end{center}
+\begin{center}\includegraphics[scale=0.15]{output/figure_heterogeneity_appendix_occupation.png}\end{center}
+\begin{center}\includegraphics[scale=0.15]{output/figure_heterogeneity_industry.png}\end{center}
+\begin{center}\includegraphics[scale=0.15]{output/figure_heterogeneity_occupation.png}\end{center}
+\begin{center}\includegraphics[scale=0.15]{output/figure_industry_emp_cbp.png}\end{center}
+\begin{center}\includegraphics[scale=0.15]{output/figure_industry_emp_nber.png}\end{center}
+\begin{center}\includegraphics[scale=0.15]{output/figure_industry_emp_placebo.png}\end{center}
+\begin{center}\includegraphics[scale=0.15]{output/figure_industry_first_stage.png}\end{center}
+\begin{center}\includegraphics[scale=0.15]{output/figure_industry_payblue_nber.png}\end{center}
+\begin{center}\includegraphics[scale=0.15]{output/figure_industry_payblue_placebo.png}\end{center}
+\begin{center}\includegraphics[scale=0.15]{output/figure_industry_pay_cbp.png}\end{center}
+\begin{center}\includegraphics[scale=0.15]{output/figure_industry_pay_nber.png}\end{center}
+\begin{center}\includegraphics[scale=0.15]{output/figure_industry_pay_placebo.png}\end{center}
+\begin{center}\includegraphics[scale=0.15]{output/figure_industry_prode_nber.png}\end{center}
+\begin{center}\includegraphics[scale=0.15]{output/figure_industry_prode_placebo.png}\end{center}
+\begin{center}\includegraphics[scale=0.15]{output/figure_industry_replaceable.png}\end{center}
+\begin{center}\includegraphics[scale=0.15]{output/figure_inequality_longdifs.png}\end{center}
+\begin{center}\includegraphics[scale=0.15]{output/figure_integrators.png}\end{center}
+\begin{center}\includegraphics[scale=0.15]{output/figure_longdif_emppriv.png}\end{center}
+\begin{center}\includegraphics[scale=0.15]{output/figure_longdif_hrwage.png}\end{center}
+\begin{center}\includegraphics[scale=0.15]{output/figure_placebo_emppriv.png}\end{center}
+\begin{center}\includegraphics[scale=0.15]{output/figure_placebo_hrwage.png}\end{center}
+\begin{center}\includegraphics[scale=0.15]{output/figure_quantile_all_f.png}\end{center}
+\begin{center}\includegraphics[scale=0.15]{output/figure_quantile_all_m.png}\end{center}
+\begin{center}\includegraphics[scale=0.15]{output/figure_quantile_all.png}\end{center}
+\begin{center}\includegraphics[scale=0.15]{output/figure_quantile_high.png}\end{center}
+\begin{center}\includegraphics[scale=0.15]{output/figure_quantile_low.png}\end{center}
+\begin{center}\includegraphics[scale=0.15]{output/figure_robot_trends.png}\end{center}
+\begin{center}\includegraphics[scale=0.15]{output/figure_stacked_emppriv.png}\end{center}
+\begin{center}\includegraphics[scale=0.15]{output/figure_stacked_hrwage.png}\end{center}
+\begin{center}\includegraphics[scale=0.15]{output/map_exposure_robots_nocar.png}\end{center}
+\begin{center}\includegraphics[scale=0.15]{output/map_exposure_robots.png}\end{center}
 
-\section{Introduction}
+\section{Tables}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table7_93_07_alt.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table7_93_07.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table7_93_14.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table7_inference_bjh_00_07.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table7_inference_bjh_00_14.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table7_inference_bjh_93_07_alt.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table7_inference_bjh_93_07.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table7_inference_bjh_93_14.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_altIT_changecomp.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_altIT_compintensity.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_altIT_itintensity.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_appendix_industry_1993_2010.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_appendix_industry_2000_2007.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_appendix_industry_2000_2010.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_appendix_industry_2004_2007.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_appendix_industry_2004_2010.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_appendix_placebo_empman.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_appendix_placebo_empraw.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_appendix_placebo_nonpart.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_appendix_placebo_urate.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_appendix_placebo_wkwage_ln.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_balance_covariates.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_changedemo_employment.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_changedemo_wages.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_covariates_longdif.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_covariates_stacked.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_gender_empman.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_gender_emppriv.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_gender_hrwage_ln.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_gender_nonpart.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_houses.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_income_bea_income_pc.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_income_bea_other_pc.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_income_bea_wages_pc.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_income_irs_wages.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_industry_dlabsh.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_industry_first_stage_00_07.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_industry_first_stage_00_14.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_industry_first_stage_04_07.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_industry_first_stage_93_07.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_industry_instrument_euro5_lv.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_industry_instrument_euro5_price.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_industry_instrument_euro5_qo.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_industry_instrument_euro6_qo.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_industry_instrument_euro9_qo.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_industry_trends_high_usage.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_industry_trends_offshore.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_industry_trends_vadded_iv_alt.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_industry_trends_vadded_iv_main.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_industry_trends_vadded.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_industry_vadded_pw.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_industry_vadded.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_integrators_cars.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_integrators_dummy.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_integrators_emp.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_integrators_log.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_ldv_employment.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_ldv_wages.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_lightman_alt_emppriv.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_lightman_alt_hrwage_ln.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_lightman_emppriv.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_lightman_hrwage_ln.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_longdif_00_07.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_longdif_00_10.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_longdif_00_14.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_longdif_93_10.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_longdif_93_14.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_manufacturing_emp.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_manufacturing_emp_unc_f.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_manufacturing_emp_unc_high.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_manufacturing_emp_unc_low.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_manufacturing_emp_unc_m.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_migration_nop.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_migration_pop.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_ols_00_07.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_ols_00_14.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_ols_93_07_alt.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_ols_93_07.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_ols_93_14.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_other_outcomes__cbp_emp_total_imp.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_other_outcomes__cbp_wages.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_other_outcomes__empnpub.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_other_outcomes__empraw.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_other_outcomes_hrwage.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_other_outcomes_ln_empman.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_other_outcomes_ln_emppriv.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_other_outcomes__nonpart.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_other_outcomes__urate.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_other_outcomes_wkwage_ln.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_other_outcomes_yrwage_ln.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_other_transfer_fedinc.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_other_transfer_ssadis.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_other_transfer_ssaret.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_other_transfer_taaimp.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_other_transfer_totedu.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_other_transfer_totindiv.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_other_transfer_totmed.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_other_transfer_unemp.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_outliers_long_emppriv.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_outliers_long_hrwage_ln.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_outliers_stacked_emppriv.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_outliers_stacked_hrwage_ln.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_population_nop.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_population_pop.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_rents.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_robustness_instrument_employment_b90_euro5_qo.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_robustness_instrument_employment_cbp_euro5_qo.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_robustness_instrument_employment_euro5_lv.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_robustness_instrument_employment_euro5_price.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_robustness_instrument_employment_euro5_qo.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_robustness_instrument_employment_euro6_qo.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_robustness_instrument_employment_euro9_qo.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_robustness_instrument_wages_b90_euro5_qo.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_robustness_instrument_wages_cbp_euro5_qo.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_robustness_instrument_wages_euro5_lv.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_robustness_instrument_wages_euro5_price.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_robustness_instrument_wages_euro5_qo.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_robustness_instrument_wages_euro6_qo.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_robustness_instrument_wages_euro9_qo.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_state_employment.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_state_wages.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_trade_automators.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_trade_mexico.tex} \end{tabularx}
+\end{table}
+\begin{table}[tbp] \centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}\begin{tabularx}{\linewidth}{lCCCCCCCCCCC}\input{output/table_trade_offshoring.tex} \end{tabularx}
+\end{table}
 
 \end{document}
